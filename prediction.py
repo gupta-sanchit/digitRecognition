@@ -9,7 +9,6 @@ _, gray = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)
 gray = cv2.resize(gray, (28, 28))
 gray = gray.reshape(1, 28, 28, 1)
 
-
 model = load_model("trainedModel/digitRecognizer.h5")
 result = np.argmax(model.predict(gray))
 print(result)
